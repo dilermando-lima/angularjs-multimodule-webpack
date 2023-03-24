@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Launch via NPM",
+            "url": "http://localhost:8080/",
+            "outFiles":["${workspaceFolder}/dist"],
+            "webRoot": "${workspaceFolder}/src/app",
+            "trace": true,
+            "skipFiles": ["<node_internals>/**"],
+            "sourceMapPathOverrides": {
+                "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
+                "webpack://?:*/*": "${workspaceFolder}/src/app/*"
+            },
+            "sourceMaps": true
+        }
+    ]
+}

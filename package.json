@@ -1,0 +1,27 @@
+{
+  "name": "angularjs",
+  "version": "1.0.0",
+  "description": "crud demo angularjs + karma + jasmine",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production",
+    "start": "webpack --mode=production --env LOG_LEVEL=info --env PORT=8080",
+    "build:dev": "webpack --mode=development --devtool source-map",
+    "start:dev": "webpack serve --mode=development --devtool source-map  --env LOG_LEVEL=debug --env PORT=8080"
+  },
+  "author": "dilo.silva.lima@gmail.com",
+  "dependencies": {
+    "angular": "^1.6.10"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.7.3",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.12.0"
+  }
+}

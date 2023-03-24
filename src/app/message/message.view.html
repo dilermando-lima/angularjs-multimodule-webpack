@@ -1,0 +1,43 @@
+
+
+<!--  success messag -->
+<div ng-if="messageService.success.isOn" id="d-success-msg"  >
+    <button type="button" ng-click="messageService.closeSuccess()">X</button>
+    <span>{{messageService.success.msg }}</span>
+</div>
+
+
+
+<!-- error-message -->
+<!-- <div id="d-error-msg" ng-if="isRunningErrorMsg"  >
+<button type="button" (click)="closeErrorMsg();">X</button>
+    <span>{{errorMsg}}</span>
+</div> -->
+
+
+
+<!-- warning-message -->
+<!-- <div id="d-warning-msg" ng-if="isRunningWarningMsg"  >
+<button type="button" (click)="closeWarningMsg();">X</button>
+<span>{{warningMsg}}</span>
+</div> -->
+
+
+<!-- confirm-message -->
+<!-- <div>
+<div id="bkgr-d-confirm" ng-if="isRunningConfirmMsg" ></div>
+<div class="container-d-confirm" *ngIf="isRunningConfirmMsg" >
+    <div id="d-confirm" ng-if="isRunningConfirmMsg" >
+        <div>{{confirmMsg}}</div>
+        <div class="lg-100">
+        <div class="lg-50">
+            <button type="button"  (click)="chooseOptionConfirm(false);" class="btn-n-blue" >Não</button>
+        </div>
+        <div class="lg-50">
+            <button type="button"  (click)="chooseOptionConfirm(true);" class="btn-n-blue" >Sim</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div> -->
+
