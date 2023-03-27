@@ -29,16 +29,38 @@ function MenuController(menuService, messageService,$scope){
     console.debug("MenuController : Init");
 
     var ctrl = {};
-    $scope.messageService = messageService;
-    
+    messageService.bindScope($scope);
+
     ctrl.title = "ISSO é um MENU";
     ctrl.listMenu = menuService.listMenu();
 
     ctrl.clickMenuItemOk = function(){
         console.debug("MenuController.clickMenuItemOk() : clicked");
-        $scope.messageService.showSuccess("some messate");
-        $scope.apply();
+        messageService.showOk("Item created successfully");
     };
+
+    ctrl.clickMenuItemError = function(){
+        console.debug("MenuController.clickMenuItemOk() : clicked");
+        messageService.showError("Item created with error");
+    };
+
+    ctrl.clickMenuItemWarning = function(){
+        console.debug("MenuController.clickMenuItemOk() : clicked");
+        messageService.showWarn("Item created successfully");
+    };
+
+    ctrl.clickMenuItemConfirm = function(){
+        console.debug("MenuController.clickMenuItemOk() : clicked");
+        messageService.showConfirm(
+            "do you reallu need d fed fd?",
+           // function(){console.debug("Noo")},
+            function(){console.debug("Yess")},
+        
+        );
+    };
+
+
+
     
     return ctrl;
 };

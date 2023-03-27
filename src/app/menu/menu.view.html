@@ -1,8 +1,46 @@
-<session>
-    <h1>{{c.title}}</h1>
-    <p>
-        <h3 ng-repeat="item in c.listMenu" >
-            <button ng-click="c.clickMenuItemOk()" >{{item}}</button>
-        </h3>
-    </p>
+<session class="menu-left">
+
+    <span class="material-icons">pie_chart</span>          <!-- Filled -->
+<span class="material-icons-outlined">pie_chart</span> <!-- Outlined -->
+<span class="material-icons-round">pie_chart</span>    <!-- Round -->
+<span class="material-icons-sharp">pie_chart</span>    <!-- Sharp -->
+<span class="material-icons-two-tone">pie_chart</span> <!-- Two Tone -->
+
+
+    <button *ngIf="statusSession" class="btn-rnd btn-mn-tgl" [class.btn-mn-tgl-block]="true" (click)="toggleMenu()" type="button" > 
+        <i class="material-icons" >menu</i>
+    </button>
+
+ <div id="menu" *ngIf="statusSession"  [class.menu-disable]="menuOff" [class.link-clicked]="linkClicked" [class.menu-enable-width-768]="menuOffWidth768"    > 
+
+    <div id="remove-menu" >
+        <a (click)="toggleMenu()"  ><i class="material-icons" >arrow_back</i></a>
+    </div>
+
+    <div class="menu-logo">
+        <img style="width: 130px; height: 50px;" src="#assets/images/logo-menu.jpg" class="img-logo" alt="">   
+    </div>
+			
+	<div class="mn-opt-grp" >
+		<div class="mn-opt-title">Register</div>
+			<div class="mn-opt-grp-item" >
+				<a class="mn-opt-item"  [routerLink]="['task/list']" (click)="linkClicked=true;menuOff=false" > List of Task </a>
+				<a class="mn-opt-item"  [routerLink]="['task/list']" (click)="linkClicked=true;menuOff=false"  > Comments </a>
+			</div>
+	</div>
+
+	
+	<div class="mn-opt-grp" >
+	<div class="mn-opt-title">Session</div>
+		<div class="mn-opt-grp-item" >
+            <!-- put above the method to auth out -->
+			<a class="mn-opt-item" (click)="logout();linkClicked=true;menuOff=false" > Sign Out </a>
+			<a class="mn-opt-item" href="#../user/list.html" (click)="linkClicked=true;menuOff=false" > Users </a>
+			<a class="mn-opt-item" href="#../role/list.html" (click)="linkClicked=true;menuOff=false" > Roles </a>
+		</div>
+</div>
+
+	
+	</div>
+
 </session>

@@ -1,43 +1,38 @@
 
-
 <!--  success messag -->
-<div ng-if="messageService.success.isOn" id="d-success-msg"  >
-    <button type="button" ng-click="messageService.closeSuccess()">X</button>
-    <span>{{messageService.success.msg }}</span>
+<div  ng-if="messageService.ok.isOn" id="d-success-msg"  >
+    <button type="button" ng-click="messageService.closeOk()">X</button>
+    <span>{{messageService.ok.msg}}</span>
+</div>
+
+<!-- error-message -->
+<div ng-if="messageService.error.isOn" id="d-error-msg" >
+    <button type="button" ng-click="messageService.closeError()">X</button>
+    <span>{{messageService.error.msg}}</span>
 </div>
 
 
-
-<!-- error-message -->
-<!-- <div id="d-error-msg" ng-if="isRunningErrorMsg"  >
-<button type="button" (click)="closeErrorMsg();">X</button>
-    <span>{{errorMsg}}</span>
-</div> -->
-
+<!-- warn-message -->
+<div ng-if="messageService.warn.isOn" id="d-warning-msg" >
+    <button type="button" ng-click="messageService.closeWarn()">X</button>
+    <span>{{messageService.warn.msg}}</span>
+</div>
 
 
-<!-- warning-message -->
-<!-- <div id="d-warning-msg" ng-if="isRunningWarningMsg"  >
-<button type="button" (click)="closeWarningMsg();">X</button>
-<span>{{warningMsg}}</span>
-</div> -->
-
-
-<!-- confirm-message -->
-<!-- <div>
-<div id="bkgr-d-confirm" ng-if="isRunningConfirmMsg" ></div>
-<div class="container-d-confirm" *ngIf="isRunningConfirmMsg" >
-    <div id="d-confirm" ng-if="isRunningConfirmMsg" >
-        <div>{{confirmMsg}}</div>
+<div>
+<div id="bkgr-d-confirm" ng-if="messageService.confirm.isOn" ></div>
+<div class="container-d-confirm" ng-if="messageService.confirm.isOn" >
+    <div id="d-confirm">
+        <div>{{messageService.confirm.question}}</div>
         <div class="lg-100">
         <div class="lg-50">
-            <button type="button"  (click)="chooseOptionConfirm(false);" class="btn-n-blue" >Não</button>
+            <button type="button"  ng-click="messageService.confirm.callbackNoAndReset()" class="btn-n-blue" >Não</button>
         </div>
         <div class="lg-50">
-            <button type="button"  (click)="chooseOptionConfirm(true);" class="btn-n-blue" >Sim</button>
+            <button type="button"  ng-click="messageService.confirm.callbackYesAndReset()" class="btn-n-blue" >Sim</button>
             </div>
         </div>
     </div>
 </div>
-</div> -->
+</div>
 
